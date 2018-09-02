@@ -1,6 +1,9 @@
 class Artist
   @@all = []
 
+  @songs = []
+
+  attr_accessor :songs
   attr_reader :name
 
   def self.all
@@ -14,6 +17,7 @@ class Artist
 
   def new_song(song_name, genre)
     song = Song.new(song_name, self, genre)
+    @songs << song
     song.artist << self
   end
 
