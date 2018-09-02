@@ -1,6 +1,7 @@
 class Genre
   @@all = []
 
+  attr_accessor :songs
   attr_reader :name
 
   def self.all
@@ -14,6 +15,7 @@ class Genre
 
   def new_song(song_name, artist)
     song = Song.new(song_name, artist, self)
+    @songs << song
   end
 
   def songs
@@ -23,6 +25,8 @@ class Genre
   end
 
   def artists
-
+    @songs.collect do |song|
+      song.artist
+    end
   end
 end
