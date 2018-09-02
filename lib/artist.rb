@@ -1,9 +1,6 @@
 class Artist
   @@all = []
 
-  @songs = []
-
-  attr_accessor :songs
   attr_reader :name
 
   def self.all
