@@ -1,7 +1,8 @@
 class Song
   @@all = []
 
-  attr_reader :name, :artist, :genre
+  attr_accessor :artist, :genre
+  attr_reader :name
 
   def self.all
     @@all
